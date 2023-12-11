@@ -25,6 +25,8 @@ jobs:
         run: |
           echo "MICROCMS_SERVICE_DOMAIN=${{ secrets.MICROCMS_SERVICE_DOMAIN }}" >> .env
           echo "MICROCMS_API_KEY=${{ secrets.MICROCMS_API_KEY }}" >> .env
+          echo ${{ secrets.MICROCMS_SERVICE_DOMAIN }}
+          ls
       
       - name: Install, build, and upload your site
         uses: withastro/action@v1
