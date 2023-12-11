@@ -20,10 +20,13 @@ jobs:
     steps:
       - name: Checkout your repository using git
         uses: actions/checkout@v3
+
+      - name: Create .env
+        run: |
+          echo "MICROCMS_SERVICE_DOMAIN=${{ secrets.MICROCMS_SERVICE_DOMAIN }}" >> .env
+          echo "MICROCMS_API_KEY=${{ secrets.MICROCMS_API_KEY }}" >> .env
+      
       - name: Install, build, and upload your site
-        env:
-          MICROCMS_SERVICE_DOMAIN: ${{ secrets.MICROCMS_SERVICE_DOMAIN }}
-          MICROCMS_API_KEY: ${{ secrets.MICROCMS_API_KEY }}
         uses: withastro/action@v1
         # with:
           # path: . # リポジトリ内のAstroプロジェクトのルートロケーション。(オプション)
