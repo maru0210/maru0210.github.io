@@ -19,15 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout your repository using git
-        uses: actions/checkout@v3
-
-      - name: Create .env
-        run: |
-          echo "MICROCMS_SERVICE_DOMAIN=${{ secrets.MICROCMS_SERVICE_DOMAIN }}" >> .env
-          echo "MICROCMS_API_KEY=${{ secrets.MICROCMS_API_KEY }}" >> .env
-          echo ${{ secrets.MICROCMS_SERVICE_DOMAIN }}
-          ls
-      
+        uses: actions/checkout@v3      
       - name: Install, build, and upload your site
         uses: withastro/action@v1
         # with:
