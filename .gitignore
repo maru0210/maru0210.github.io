@@ -20,3 +20,4 @@ pnpm-debug.log*
 # macOS-specific files
 .DS_Store
 src/pages/preview.astro
+src/library/microcms_preview.ts
