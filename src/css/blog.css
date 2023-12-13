@@ -1,0 +1,31 @@
+main {
+  h1,
+  h2,
+  h3 {
+    @apply font-medium mb-2;
+  }
+
+  h1 {
+    @apply lg:text-2xl text-xl;
+  }
+
+  h2 {
+    @apply lg:text-xl text-lg mx-1;
+  }
+
+  h3, p {
+    @apply mx-1;
+  }
+
+  .post {
+    @apply lg:text-lg text-base;
+  }
+
+  p:has(>code), div:has(>pre) {
+    @apply bg-gray-900 text-white mx-2 my-4 px-4 py-2 rounded-md;
+  }
+
+  figure {
+    @apply lg:w-4/5 w-11/12 mx-auto my-4 rounded-md overflow-hidden;
+  }
+}

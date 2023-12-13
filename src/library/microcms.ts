@@ -12,7 +12,14 @@ export type Blog = {
   updatedAt: string;
   publishedAt: string;
   revisedAt: string;
+  
+  category: string;
   title: string;
+  cover: {
+    url: string;
+    height: number;
+    width: number;
+  };
   content: string;
 };
 export type BlogResponse = {
