@@ -1,21 +1,25 @@
 ---
+import Card from "../components/Card.astro";
 import Layout from "../layouts/Layout.astro";
 
 //microCMS呼び出し
 import { getBlogs } from "../library/microcms";
-const response = await getBlogs({ fields: ["id", "title"] });
+const response = await getBlogs({ fields: ["id", "title", "cover", "category"] });
 ---
 
 <Layout title="TOP | まるにうむ">
   <main>
-    <ul>
-      {
-        response.contents.map((content: any) => (
-          <li>
-            <a href={content.id}>{content.title}</a>
-          </li>
-        ))
-      }
-    </ul>
+    <section class="text-gray-600 body-font">
+      <div class="container px-5 py-24 mx-auto">
+        <h1 class="lg:text-3xl text-2xl font-medium title-font mb-5">NEWS</h1>
+        <div class="flex flex-wrap -m-4">
+          {
+            response.contents.map((content: any) => (
+              <Card title={content.title} id={content.id} coverUrl={content.cover.url} category={content.category} />
+            ))
+          }
+        </div>
+      </div>
+    </section>
   </main>
 </Layout>
