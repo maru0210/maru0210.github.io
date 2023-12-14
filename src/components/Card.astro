@@ -3,7 +3,9 @@ interface Props {
   title: string;
   id: string;
   coverUrl: string;
-  category: string;
+  category: {
+    name: string;
+  };
 }
 
 const { title, id, coverUrl, category } = Astro.props;
@@ -26,7 +28,7 @@ import tags from "../images/tags_light.svg";
         class="flex tracking-widest text-xs title-font font-medium text-gray-400 mb-1"
       >
         <img class="pr-1" src={tags.src} />
-        {category}
+        {category.name}
       </h2>
       <h1 class="title-font text-lg font-medium text-gray-900 _mb-3">
         {title}
