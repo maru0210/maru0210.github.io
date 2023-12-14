@@ -27,7 +27,7 @@ main {
   }
 
   .post {
-    @apply lg:text-lg text-base;
+    @apply mt-10 lg:text-lg text-base;
   }
 
   p:has(> code),
