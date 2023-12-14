@@ -13,13 +13,16 @@ export type Blog = {
   publishedAt: string;
   revisedAt: string;
   
-  category: string;
+  category: {
+    name: string;
+  };
   title: string;
   cover: {
     url: string;
     height: number;
     width: number;
   };
+  useCover: boolean;
   content: string;
 };
 export type BlogResponse = {
