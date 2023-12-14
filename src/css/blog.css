@@ -27,11 +27,11 @@ main {
       }
     }
 
-    p.level-2 {
+    .level-2 {
       @apply mx-2;
     }
 
-    p.level-3 {
+    .level-3 {
       @apply mx-3;
     }
   }
