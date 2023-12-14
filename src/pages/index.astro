@@ -4,10 +4,16 @@ import Layout from "../layouts/Layout.astro";
 
 //microCMS呼び出し
 import { getBlogs } from "../library/microcms";
-const response = await getBlogs({ fields: ["id", "title", "cover", "category"] });
+const response = await getBlogs({
+  fields: ["id", "title", "cover", "category"],
+});
+
+//画像URL
+const imageUrl =
+  "https://images.microcms-assets.io/assets/8fda8347b33446a891600ff5a8fc7781/643fe282c6ab4f1c9fbe5005863ffbbd/Marunium.webp";
 ---
 
-<Layout title="Marunium">
+<Layout title="Marunium" imageUrl={imageUrl}>
   <main>
     <section class="text-gray-600 body-font">
       <div class="container px-5 py-24 mx-auto">
@@ -15,7 +21,12 @@ const response = await getBlogs({ fields: ["id", "title", "cover", "category"] }
         <div class="flex flex-wrap -m-4">
           {
             response.contents.map((content: any) => (
-              <Card title={content.title} id={content.id} coverUrl={content.cover.url} category={content.category} />
+              <Card
+                title={content.title}
+                id={content.id}
+                coverUrl={content.cover.url}
+                category={content.category}
+              />
             ))
           }
         </div>
@@ -23,4 +34,3 @@ const response = await getBlogs({ fields: ["id", "title", "cover", "category"] }
     </section>
   </main>
 </Layout>
-
