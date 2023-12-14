@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import { getBlogs, getBlogDetail } from "../library/microcms";
+import { JSDOM } from "jsdom";
 
 // 詳細記事ページの全パスを取得
 export async function getStaticPaths() {
@@ -19,11 +20,10 @@ const { blogId } = Astro.params;
 const blog = await getBlogDetail(blogId as string);
 
 // 段落のレベルクラスを付与する
-const intoBody = new DOMParser().parseFromString(
-  blog.content,
-  "text/html"
-).body;
-const elements = Array.from(intoBody.children);
+const dom = new JSDOM(
+  "<body>" + blog.content + "</body>"
+).window.document.querySelector("body");
+const elements = Array.from(dom !== null ? dom.children : []);
 
 let level = 0;
 let isLevelChange = false;
