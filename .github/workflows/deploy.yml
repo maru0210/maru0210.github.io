@@ -7,6 +7,9 @@ on:
     branches: [ main ]
   # このワークフローを GitHub の Actions タブから手動で実行できるようにします。
   workflow_dispatch:
+  # microCMS から記事を更新したときにワークフローを実行します。
+  repository_dispatch:
+    types: [blog-update]
 
 # このジョブがリポジトリをクローンし、ページデプロイメントを作成することを許可します。
 permissions:
