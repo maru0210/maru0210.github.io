@@ -9,6 +9,33 @@ main {
     }
   }
 
+  .post {
+    @apply mt-10 lg:text-lg text-base;
+
+    p {
+      @apply mx-1;
+
+      + p {
+        @apply mt-4;
+      }
+
+      + h1,
+      + h2,
+      + h3,
+      + .level-change {
+        @apply mt-12;
+      }
+    }
+
+    p.level-2 {
+      @apply mx-2;
+    }
+
+    p.level-3 {
+      @apply mx-3;
+    }
+  }
+
   h1 {
     @apply lg:text-2xl text-xl;
   }
@@ -17,17 +44,8 @@ main {
     @apply lg:text-xl text-lg mx-1;
   }
 
-  h3,
-  p {
-    @apply mx-1;
-
-    + p {
-      @apply mt-8;
-    }
-  }
-
-  .post {
-    @apply mt-10 lg:text-lg text-base;
+  h3 {
+    @apply lg:text-lg text-base mx-2;
   }
 
   p:has(> code),
