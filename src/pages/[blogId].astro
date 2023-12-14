@@ -19,9 +19,11 @@ const { blogId } = Astro.params;
 const blog = await getBlogDetail(blogId as string);
 
 // 段落のレベルクラスを付与する
-const intoDiv = document.createElement("div");
-intoDiv.innerHTML = blog.content;
-const elements = Array.from(intoDiv.children);
+const intoBody = new DOMParser().parseFromString(
+  blog.content,
+  "text/html"
+).body;
+const elements = Array.from(intoBody.children);
 
 let level = 0;
 let isLevelChange = false;
