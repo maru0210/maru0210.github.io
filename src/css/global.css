@@ -1,4 +1,26 @@
-@import url('https://fonts.googleapis.com/css2?family=Dhurjati&family=Noto+Sans+JP:wght@400;500&display=swap');
+@font-face {
+    font-family: 'Dhurjati';
+    src: url('/fonts/Dhurjati-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Noto Sans JP';
+    src: url('/fonts/NotoSansJP-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Noto Sans JP';
+    src: url('/fonts/NotoSansJP-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
 
 * {
     margin: 0;
