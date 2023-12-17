@@ -1,4 +1,6 @@
 ---
+import { ViewTransitions } from "astro:transitions";
+
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import "../css/global.css";
@@ -12,7 +14,7 @@ const { title, imageUrl } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="ja">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content="Astro description" />
@@ -28,6 +30,8 @@ const { title, imageUrl } = Astro.props;
 		<meta name="twitter:image" content={imageUrl} />
 
 		<meta name="google-site-verification" content="YELytdGV8G3uTQN4LWBpzjW0YLxvN6Xjf8sq3vTsGEw" />
+
+		<ViewTransitions />
 	</head>
 	<body class="text-gray-900">
 		<Header />
