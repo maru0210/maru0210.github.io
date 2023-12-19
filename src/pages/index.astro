@@ -1,36 +1,10 @@
 ---
-import Card from "../components/Card.astro";
 import Layout from "../layouts/Layout.astro";
-
-//microCMS呼び出し
-import { getBlogs } from "../library/microcms";
-const response = await getBlogs({
-  fields: ["id", "title", "cover", "category"],
-});
 
 //画像URL
 const imageUrl =
   "https://images.microcms-assets.io/assets/8fda8347b33446a891600ff5a8fc7781/643fe282c6ab4f1c9fbe5005863ffbbd/Marunium.webp";
 ---
 
-<Layout title="Marunium" imageUrl={imageUrl}>
-  <main>
-    <section class="text-gray-600 body-font">
-      <div class="container px-5 py-24 mx-auto">
-        <h1 class="lg:text-3xl text-2xl font-medium title-font mb-5">NEWS</h1>
-        <div class="flex flex-wrap -m-4">
-          {
-            response.contents.map((content: any) => (
-              <Card
-                title={content.title}
-                id={content.id}
-                coverUrl={content.cover.url}
-                category={content.category}
-              />
-            ))
-          }
-        </div>
-      </div>
-    </section>
-  </main>
-</Layout>
+<Layout title="Marunium" imageUrl={imageUrl} />
+
