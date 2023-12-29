@@ -21,22 +21,26 @@ const { title, imageUrl } = Astro.props;
     <meta name="twitter:site" content="@auranti_st" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content="" />
-    <meta name="twitter:image" content={imageUrl} />
-
-    <script>
-      window.onload = function () {
-        if (window.location.href.includes("maru0210.github.io")) {
-          const redirectLocation = window.location.href.replace(
-            "maru0210.github.io",
-            "marunium.com"
-          );
-          window.location.href = redirectLocation;
-        }
-      };
-    </script>
-  </head>
-  
+    <meta name="twitter:image" content={imageUrl} />  
   <body>
     <slot />
+    <h1>新サイトに移行しました。</h1>
+    <h1><a href="https://marunium.com">https://marunium.com</a></h1>
   </body>
 </html>
+
+<style>
+  h1 {
+    font-size: 2rem;
+    text-align: center;
+    margin-top: 2rem;
+  }
+
+  a {
+    color: blueviolet
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+</style>
